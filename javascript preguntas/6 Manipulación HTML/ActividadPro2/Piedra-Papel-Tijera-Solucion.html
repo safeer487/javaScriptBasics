@@ -1,0 +1,52 @@
+<html>
+<body>
+	<section>
+		<input type="button" name="papel" onclick="elegirJugada('papel')" value="papel">
+		<input type="button" name="tijera" value="tijera" onclick="elegirJugada('tijera')">
+		<input type="button" name="piedra" value="piedra" onclick="elegirJugada('piedra')">
+	</section>
+</body>
+</html>
+
+<script type="text/javascript">
+
+
+
+function elegirJugada(insBoton) {
+	var bGanar = false;
+	var sBot
+	switch(Math.floor((Math.random() * 3) + 1)) {
+		case 1:
+			sBot = 'papel';
+		break;
+		case 2:
+			sBot = 'tijera';
+		break;
+		case 3:
+			sBot = 'piedra';
+		break;
+	}
+
+
+	switch(insBoton) {
+		case 'papel':
+			if(sBot == 'piedra') {
+				bGanar = true;
+			}
+		break;
+		case 'tijera':
+			if(sBot == 'papel') {
+				bGanar = true;
+			}
+		break;
+		case 'piedra':
+			if(sBot == 'tijera') {
+				bGanar = true;
+			}
+		break;
+	}
+
+	alert(bGanar + ' ' + insBoton + ' ' + sBot)
+}
+
+</script>

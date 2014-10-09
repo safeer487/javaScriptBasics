@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Ejemplo de validación con JS</title>
+	<style>
+		input {
+			display: block;
+			margin-top: 20px;
+			margin: 0 auto;
+		}
+		.rojo {
+			border: 2px solid red;
+		}
+	</style>
+</head>
+<body>
+	<h1>Valida DNI y contraseña</h1>
+	<p id="mensajesError" align="center">
+		
+	</p>
+	<p>
+		<form action="#" id="formularioDNI">
+			<input type="number" name="numerosDNI" id="numerosDNI" placeholder="Números del DNI" required maxlength="8">
+			<input type="text" name="letraDNI" id="letraDNI" placeholder="Letra del DNI" required maxlength="1">
+			<input type="password" name="pass1" id="pass1" placeholder="Contraseña" required>
+			<input type="password" name="pass2" id="pass2" placeholder="Repita contraseña" required>
+			<input type="button" value="identificarme" onclick="validarForm()">
+		</form>
+	</p>
+
+	<script>
+
+	/**
+	 * Método que comprueba los datos del formulario
+	 */
+	function validarForm() {
+		//Variables
+		var iNumDNI = document.getElementById('numerosDNI').value
+		var sLetraDNI = document.getElementById('letraDNI').value
+		var sPass1 = document.getElementById('pass1').value
+		var sPass2 = document.getElementById('pass2').value
+		var aError = new Array()
+
+		/**
+		 * Validacion
+		 */
+		//Num DNI vacio
+		if(iNumDNI == null || iNumDNI.length == 0 || /^\s+$/.test(iNumDNI)) {
+			aError.push(1)
+		}
+
+		//Letra DNI vacio
+		if(sLetraDNI == null || sLetraDNI.length == 0 || /^\s+$/.test(sLetraDNI)) {
+			aError.push(2)
+		}
+
+		//Pass1 vacio
+		if(sPass1 == null || sPass1.length == 0 || /^\s+$/.test(sPass1)) {
+			aError.push(3)
+		}
+
+		//Pass2 vacio
+		if(sPass2 == null || sPass2.length == 0 || /^\s+$/.test(sPass2)) {
+			aError.push(4)
+		}
+
+		//Num DNI es númerico
+		if(isNaN(iNumDNI)) {
+			aError.push(5)
+		}
+
+		//Letra DNI es un string
+		if(!isNaN(sLetraDNI)) {
+			aError.push(6)
+		}
+
+		//Pass son iguales
+		if(sPass1 != sPass2) {
+			aError.push(7)
+		}
+
+		/**
+		 * Tratamos errores
+		 */
+		//Quita marcas
+		document.getElementById('numerosDNI').classList.remove("rojo")
+		document.getElementById('letraDNI').classList.remove("rojo")
+		document.getElementById('pass1').classList.remove("rojo")
+		document.getElementById('pass2').classList.remove("rojo")
+
+		//Marca e informa al usuario
+		var sTextError = ''
+		for(iPos in aError) {
+			switch(aError[iPos]) {
+				case 1:
+					sTextError += '-Número del DNI esta vacío. <br>'
+					document.getElementById('numerosDNI').classList.add("rojo")
+				break;
+				case 2:
+					sTextError += '-Letra del DNI esta vacía. <br>'
+					document.getElementById('letraDNI').classList.add("rojo")
+				break;
+				case 3:
+					sTextError += '-La primera contraseña esta vacía. <br>'
+					document.getElementById('pass1').classList.add("rojo")
+				break;
+				case 4:
+					sTextError += '-La segunda contraseña esta vacía. <br>'
+					document.getElementById('pass2').classList.add("rojo")
+				break;
+				case 5:
+					sTextError += '-El DNI debe ser un número <br>'
+					document.getElementById('numerosDNI').classList.add("rojo")
+				break;
+				case 6:
+					sTextError += '-La letra del DNI debe ser un caracter. <br>'
+					document.getElementById('letraDNI').classList.add("rojo")
+				break;
+				case 7:
+					sTextError += '-Las contraseñas no son iguales <br>'
+					document.getElementById('pass1').classList.add("rojo")
+					document.getElementById('pass2').classList.add("rojo")
+				break;
+			}
+		}
+		document.getElementById('mensajesError').innerHTML = sTextError 
+
+		/**
+		 * Enviamos el formulario
+		 */
+		if(aError.length == 0) {
+			document.getElementById('formularioDNI').submit()
+		} 
+	}
+
+	</script>
+</body>
+</html>

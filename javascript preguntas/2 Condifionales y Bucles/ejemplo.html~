@@ -1,0 +1,28 @@
+<script> 
+//Condicionales
+if(2 == 2) { 
+	alert('2 es igual a 2') 
+} else { 
+	alert('2 es distinto de 2') 
+} 
+
+//Bucle for
+for(i = 0; i < 10; i = i + 1){ 
+	alert(i)
+} 
+
+//Bucle While
+i = 0
+while(i < 10) { 
+	alert(i)
+	i= i + 1
+} 
+
+//Bucle For/in
+
+var asNoms = Array('Hola', 'Mundo')
+
+for(sText in asNoms) {
+	alert(asNoms[sText])
+}
+</script>

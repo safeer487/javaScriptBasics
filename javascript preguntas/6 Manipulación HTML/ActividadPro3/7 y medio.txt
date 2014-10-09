@@ -1,0 +1,21 @@
+El objetivo será realizar un juego para luchar contra el ordenador al 7 y medio.
+
+Tendremos dos botones en pantalla: 'CARTA' y 'PLANTARSE'. Según pulsemos sobre CARTA, se irá pidiendo cartas. Hasta que se pulse en PLANTARSE.
+Se jugará por turnos, el ordenador también irá pidiendo cartas hasta que llegue entre 6 y 7 y medio.
+
+Los datos se mostrarán con un alert()
+
+Ejemplo:
+
+
+CARTA
+
+Te ha salido la carta 5. En total tienes 5.
+
+CARTA
+
+Te ha salido la carta 2. En total tienes 7.
+
+PLANTARSE
+
+El ordenador se ha pasado con 8. Has ganado.

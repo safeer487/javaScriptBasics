@@ -1,0 +1,10 @@
+Un ricachón te ha contratado para realizar el software de su nuevo avión, y has decidido hacerlo con Javascript. 
+
+- Haz un objeto de avión con las variables: combustible, ruedas desplegadas, número de pasajeros y nombre de piloto.
+Espolvorea con los métodos: llenar depósito (capacidad máxima del avión es de 180.000 litros), desplegar tren de aterrizaje, replegar tren de aterrizaje, imprimir nombre de piloto, imprimir número de pasajeros, cambiar número de pasajeros y cambiar nombre del piloto.
+
+- Comprueba que todos los métodos funcionan correctamente. 
+
+El ricachón ha comprado otro avión para su perro. Se diferencia en que lo pilota otra persona y tendrá dos pasajeros (perro y su cuidador). Crea una nueva instancia.
+
+- Llena los depósitos e imprime los nombres de los pilotos.

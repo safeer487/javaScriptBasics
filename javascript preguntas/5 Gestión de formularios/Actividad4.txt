@@ -1,0 +1,14 @@
+Copia el formulario de contacto de http://androsweb.es/ .
+
+Directrices:
+
+- El nombre debe ser letras, obligatorio (no puede poner un espacio) y como máximo 50 carácteres. 
+
+- El e-mail tiene que ser válido. No superar los 100 carácteres. Obligatorio.
+
+- Teléfono válido. Obligatorio. 9 cifras.
+
+- Mensaje con un máximo de 500 carácteres. Obligatorio.
+
+
+Recoge los datos con PHP y envíalo a tu correo personal.

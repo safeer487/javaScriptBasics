@@ -1,0 +1,4 @@
+Esta clase esta organizada en una matriz. Guardaros a vosotros mismos.
+
+- Genera la matriz en las formas aprendidas. 
+- Imprimiros.

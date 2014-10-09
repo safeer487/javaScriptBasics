@@ -1,0 +1,84 @@
+<html>
+<body>
+	<section>
+		<center>
+			<input type="button" id="idPlantarse" value="plantarse" onClick="plantarse(aJugador, aBot, aCartas)"><input type="button" id="idPedir" value="pedir" onClick="pedirCarta(aJugador, aBot, aCartas)">
+		</center>
+	</section>
+</body>
+</html>
+<script type="text/javascript">
+
+var aCartas = new Array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 0.5, 0.5, 0.5)
+var aJugador = new Array()
+var aBot = new Array()
+	
+	/**
+	 * Metodo que termina el juego
+	 * @param {array} inaCarJuga Array con las cartas del jugador
+	 * @param {array} inaCarBot Array con las cartas del bot
+	 * @param {array} inaCarta Array con todas las cartas
+	 */
+	function plantarse(inaCarJug, inaCarBot, inaCarta) {
+		var fLimit = 7.5
+		var fTotalJug = sumarContenido(inaCarJug)
+		var fTotalBot = sumarContenido(inaCarBot)
+		var fNumJug = fLimit - fTotalJug
+		var fNumBot = fLimit - fTotalBot
+		if(fNumBot < fNumJug) {
+			alert('HAS GANADO. Tenias ' + fTotalJug + ' y el bot ' + fNumBot)
+		} else if(fNumBot > fNumJug){
+			alert('HAS PERDIDO. Tenias ' + fTotalJug + ' y el bot ' + fNumBot)
+		} else {
+			alert('EMPATE. Tenias ' + fTotalJug + ' y el bot ' + fNumBot)
+		}
+		location.reload()
+	}
+
+	/**
+	 * Metodo que da una carta al jugador
+	 * @param {array} inaCarJuga Array con las cartas del jugador
+	 * @param {array} inaCarBot Array con las cartas del bot
+	 * @param {array} inaCarta Array con todas las cartas
+	 */
+	function pedirCarta(inaCarJug, inaCarBot, inaCarta) {
+		//Le damos al jugador una carta aleatoria
+		var iAle = Math.floor((Math.random() * inaCarta.length))
+		inaCarJug[inaCarJug.length] = inaCarta[iAle]
+
+		//Suma el total 
+		var iTotalJug = sumarContenido(inaCarJug)
+
+		//Juega Bot
+		var iBotAle = Math.floor((Math.random() * inaCarta.length))
+		var iTotalBot = sumarContenido(inaCarBot)
+		if(iTotalBot < 6) {//Solo pide carta cuando sea inferior a 6 su suma
+			inaCarBot[inaCarBot.length] = inaCarta[iBotAle]
+		}
+
+		//Comprobamos el estado del juego
+		if(iTotalJug > 7.5) {//PIerde el jugador
+			alert('HAS PERDIDO. Te has pasado con un ' + iTotalJug)
+			location.reload()
+		} else if(iTotalBot  > 7.5) {
+			alert('HAS GANADO. El bot se ha pasado con un ' + iTotalBot + '. Mientras que tu tenias ' + iTotalJug)
+			location.reload()
+		} else {//Imprimimos el mensaje
+			alert('Te ha salido un ' + inaCarta[iAle] + ' y tienes en total ' + iTotalJug)
+		}
+	}
+
+	/**
+	 * Metodo que suma el contenido de un array
+	 * @param  {array} inArray Array con los valores de las cartas
+	 * @return {int} iTotal Suma total
+	 */
+	function sumarContenido(inArray) {
+		var iTotal = 0
+		for(iPos in inArray) {
+			iTotal += inArray[iPos]
+		}
+		return iTotal
+	}
+
+</script>

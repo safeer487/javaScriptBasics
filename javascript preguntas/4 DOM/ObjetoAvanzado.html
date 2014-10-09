@@ -1,0 +1,41 @@
+<script language="javascript" type="text/javascript">
+
+/**
+ * Objeto Gato
+ * @param String insNom Nombre del gato
+ */
+function Gato(insNom) {
+	//Variables
+	this.nombre = insNom
+	this.edad = 20
+
+	/**
+	 * Método que imprime el nombre
+	 */
+	this.hablar = function() {
+		alert(this.nombre + " dice miauuu!")
+	}
+	
+	/**
+	 * Método que cambia el nombre del gato
+	 * @param String insNomNew
+	 */
+	this.setNom = function(insNomNew) {
+		this.nombre = insNomNew
+	}
+} 
+
+//Creo el objeto de Gato, con el nombre de Mozart
+Gato1 = new Gato("mozart")
+//En el objeto, llamo a una de sus funciones: hablar
+Gato1.hablar() 
+
+Gato2 = new Gato("ginger")
+Gato2.hablar()
+
+Gato2.setNom("Vella")
+Gato2.hablar()
+
+alert("Me encanta el nombre " + Gato1.nombre)
+
+</script>

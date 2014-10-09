@@ -1,0 +1,44 @@
+Crearemos dos objetos: Piloto y azafata.
+
+*******Piloto******
+
+Variables:
+
+-Nombre
+-Apellidos
+-Anyos en activo
+-Capitan
+
+Metodos:
+
+-Imprimir nombre y apellidos
+-Convertir en capitan.
+-Cambiar anyos en activo.
+-Imprimir toda la información:
+"Nombre Apellidos (Si es capitan) con Anyos activos"
+"Eufrasia Robledo es capitan con 12 años en activo"
+
+Azafato()
+
+Variables:
+
+-Nombre
+-Apellidos
+-AvionDesignado
+
+Metodos:
+
+-ImprimirNombre
+-CambiarAvion
+
+
+---------------------crea los siguientes pilotos-----------------
+Juan Martinez Cuel, 28 años en activo, si es capitan. 
+David Hurtado Robledo, 3 años en activo, no es capitan.
+
+---------------------crea los siguientes azafatos----------------
+Maria Hurtado Per, avion 4
+Sonia Llorent Herrero, avion 4
+Pepe Sotero Ruiz, avion 1
+
+Utiliza los metodos para imprimir y varia los datos.

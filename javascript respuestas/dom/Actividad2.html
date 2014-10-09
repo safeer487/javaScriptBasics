@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	function AvionAsses(){
+		this.iCombustible = 50;
+		this.bTren = true;
+		this.ipasajeros = 45;
+		this.sNomPiloto = 'yo';
+		this.iLimDepo = 180000;
+
+	/**
+	 * metodo que mostra combustible
+	 */
+	this.llenarDesposito = function(){
+		this.iCombustible = this.iLimDepo;
+		console.log('Deposito lleno');
+	}
+	/**
+	 * metodo que desplega el tren
+	 */
+	this.desplegarTren = function(){
+		this.bTren = true;
+		console.log('Tren desplegado');
+	}
+	/**
+	 * metodo que replegar el tren
+	 */
+	this.replegarTren = function(){
+		this.bTren = false;
+		console.log('Tren replegado');
+	}
+	/**
+	 * Metodo que imprima el nombre del piloto
+	 */
+	this.mostrarNombrepiloto = function(){
+		console.log('El piloto se llama '+ this.sNomPiloto);
+	}
+	/**
+	 * Metodo que imprima el numero de pasajeros
+	 */
+	this.mostrarNumPasajeros = function(){
+		console.log('El número de pasajeros: ' + this.ipasajeros);
+	}
+	/**
+	 * Metodo que cambia numero de pasajeros
+	 */
+	this.cambiarNumPasajero = function(iniPas){
+		this.ipasajeros = iniPas;
+		console.log('Se ha cambiado pasajeros: ' + this.ipasajeros);
+	}
+	/**
+	 * Metodo que cambia nombre del piloto
+	 */
+	 this.cambiarNomPiloto = function(insNomNew){
+	 	this.sNomPiloto = insNomNew;
+	 	console.log('Nuevo piloto ' + this.sNomPiloto);
+	 }
+}
+
+var miAvion = new AvionAsses();
+miAvion.mostrarNumPasajeros();
+miAvion.cambiarNumPasajero(500);
+miAvion.mostrarNumPasajeros();
+miAvion.mostrarNombrepiloto();
+miAvion.cambiarNumPasajero('lucas')
+</script>
+
+	
+</body>
+</html>

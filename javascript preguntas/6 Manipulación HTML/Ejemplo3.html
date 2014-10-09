@@ -1,0 +1,55 @@
+<html>
+<body>
+<h2 id="titulo" style="color:red">Pon tu nombre</h2>
+<p id="instruccion">Tiene que ser real</p>
+<form name="fdatos">
+	<input type="text" name="nombre" id="nombre=" value="pon tu nombr" />
+	<input type="button" name="cambiar_nom" value="elegir nombre" onclick="cambiarNom()" />
+	<input type="button" name="cambiar_style" value="cambiar estilo" onclick="cambiarStyle()" />
+	<input type="button" name="cambiar_write" value="nuevo html" onclick="cambiarHTML()" />
+</form>
+</body>
+<script type="text/javascript" >
+	function cambiarNom() {
+		var elemento = document.fdatos.nombre.value
+		alert("No me gusta: " + elemento)
+		document.fdatos.nombre.value = "Eugenio"
+	}
+	
+	function cambiarStyle() {
+		document.getElementById("titulo").style.color = "green"
+		document.getElementById("titulo").style.fontSize = 'small'
+	}
+	
+	function cambiarHTML() {
+		//<p id="pelo">Mi gato es azul</p> --> Mi gato es azul
+		var elemento = document.getElementById("instruccion").innerHTML;
+		//sCamiado se cambia 
+		var sCambiado = elemento.replace("real","falso")
+		document.getElementById("instruccion").innerHTML = sCambiado
+	}
+
+//Cambiar atributos
+//setAttribute cambia el atributo type to button
+document.getElementById("pass1").setAttribute("type", "button")
+
+//<a href="#" id="enlace">lorem</a>
+document.getElementById("enlace").setAttribute("href", "google.es")
+
+//Coger atributos
+//<img src="gatos/gordos.jpg" id="portada"> 
+var sTexto = document.getElementById("img").getAttribute("src")
+
+var iBorde = document.getElementById("precios").getAttribute("border")
+
+//Borrar atributos
+/**
+ * Borrar atributos
+ */
+//<input type="text" id="dni" value="" disabled>
+document.getElementById("precios").removeAttribute("borde")
+
+
+
+</script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+var sTexto = "A rElaXing cUp oF cAfé CoN lEchE"
+
+
+//a menusculas
+var sTextoMinusculas = sTexto.toLowerCase();
+//a mayusculas
+var sTextoMaysculas = sTexto.toUpperCase();
+
+var sCiudad = " Madrid 2020";
+//concadenar el texto minusculas
+var sConcadenar = sTextoMinusculas +  sCiudad;
+
+
+//Muestra frase en 5 segundos despues que carge la pagina
+var iTiemp = 5000;
+function mostrarPopUp(){
+	alert(sTextoMinusculas);
+}
+
+setTimeout('mostrarPopUp()', iTiemp);
+
+
+
+//mostrar
+console.log(sTextoMinusculas);
+console.log(sTextoMaysculas);
+console.log(sConcadenar);
+
+
+
+</script>
+	
+</body>
+</html>

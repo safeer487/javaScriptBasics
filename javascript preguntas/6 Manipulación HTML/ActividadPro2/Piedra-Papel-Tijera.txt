@@ -1,0 +1,3 @@
+Crea el juego de Piedra-papel-tijera.
+Tres botones en pantalla con cada elemento.
+Cuando se pulse sobre uno de ellos, se mostrará con un alert() si has ganado al ordenador (quien elegirá al azar).

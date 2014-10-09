@@ -1,0 +1,75 @@
+<html>
+<body>
+	<section>
+		<table align="center">
+			<tr>
+				<td colspan="4"><input type="text" id="pantalla" value="0"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="7" onClick="recogerVariable(7)"></td>
+				<td><input type="button" value="8" onClick="recogerVariable(8)"></td>
+				<td><input type="button" value="9" onClick="recogerVariable(9)"></td>
+				<td><input type="button" value="+" onClick="recogerVariable('+')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="4" onClick="recogerVariable(4)"></td>
+				<td><input type="button" value="5" onClick="recogerVariable(5)"></td>
+				<td><input type="button" value="6" onClick="recogerVariable(6)"></td>
+				<td><input type="button" value="-" onClick="recogerVariable('-')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="1" onClick="recogerVariable(1)"></td>
+				<td><input type="button" value="2" onClick="recogerVariable(2)"></td>
+				<td><input type="button" value="3" onClick="recogerVariable(3)"></td>
+				<td><input type="button" value="X" onClick="recogerVariable('X')"></td>
+			</tr>
+			<tr>
+				<td><input type="button" value="0" onClick="recogerVariable(0)"></td>
+				<td colspan="2"><input type="button" value="=" onClick="recogerVariable('=')"></td>
+				<td><input type="button" value="borrar" onClick="recogerVariable('borrar')"></td>
+			</tr>
+		</table>
+
+		<input type="hidden" id="campo1" value="">
+		<input type="hidden" id="campo2" value="">
+		<input type="hidden" id="campo3" value="">
+	</section>
+</body>
+</html>
+<script type="text/javascript">
+	function recogerVariable(insVariable) {
+		if(insVariable == 'borrar') {
+			location.reload()
+		}
+
+		if(insVariable != "=") {
+			if(document.getElementById("campo1").getAttribute("value") == "") {
+				document.getElementById("campo1").setAttribute("value", insVariable) 
+			} else if(document.getElementById("campo2").getAttribute("value") == "") {
+				document.getElementById("campo2").setAttribute("value", insVariable)
+			} else {
+				document.getElementById("campo3").setAttribute("value", insVariable)
+			}
+		} else {
+			var iNum1 = document.getElementById("campo1").getAttribute("value")
+			var sOperacion = document.getElementById("campo2").getAttribute("value")
+			var iNum2 = document.getElementById("campo3").getAttribute("value")
+			var iResultado = 0
+			switch(sOperacion) {
+				case '+':
+					iResultado = parseInt(iNum1) + parseInt(iNum2)
+					break;
+				case '-':
+					iResultado = parseInt(iNum1) - parseInt(iNum2)
+					break;
+				case 'X':
+					iResultado = parseInt(iNum1) * parseInt(iNum2)
+					break;
+			}
+			document.getElementById("pantalla").setAttribute("value", iResultado)
+		}
+
+
+		
+	}
+</script>

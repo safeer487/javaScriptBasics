@@ -1,0 +1,9 @@
+Te doy un texto: A rElaXing cUp oF cAfé CoN lEchE.
+
+- Conviertelo a minúsculas.
+
+- Conviertelo a mayusculas.
+
+- Concadena la siguiente coletilla a las minusculas: " Madrid 2020".
+
+- Muestra la anterior frase concadenada en un popup, una sola vez, después de 5 segundos que se inicie la página. 

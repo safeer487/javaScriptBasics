@@ -1,0 +1,5 @@
+Ahora soy vuestro cliente: quiero una aplicación en Javascript para gestionar profesores a partir de objetos. 
+
+- Tendrás que hacer un objeto (Profesor) con un atributo de nombre y otro de imprimir nombre. 
+
+- Define 3 nuevos profesores: Isa, Sonia y Andros.

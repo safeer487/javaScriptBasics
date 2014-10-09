@@ -1,0 +1,7 @@
+Una página web con contenido sensible, una tienda on-line de masoquismo sexual, te ha encargado que realices un formulario de comprobación para menores. Deberá tener 3 campos de texto, con el objetivo de ser especificado la fecha de nacimiento del usuario (día-mes-año). Comprueba:
+
+- Campos llenos.
+
+- Fecha válida.
+
+- El usuario es mayor de edad. En ese caso redireccinas a Google. En el caso de ser menor, redireccionas a Yahoo.

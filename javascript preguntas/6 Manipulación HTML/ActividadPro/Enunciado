@@ -1,0 +1,10 @@
+Una empresa de calzado a decidido hacer una nueva gama de zapatillas de alta tecnología. Para la gama infantil, tendrá un tamagotchi incluido de serie. Al poseer un navegador, se te ha pedido que realices esta mascota con javascript. Debe tener estas características:
+
+- Realizarás el objeto "tamagotchi".
+- Método para darle un nombre.
+- Método que te devuelva su nombre.
+- Método para darle de comer.
+- Método para comprobar su grado de felicidad y hambre. 
+- Método para jugar con él.
+
+Cada 10 segundos tendrá hambre y se aburrirá. Deberás poner dos botones para satisfacer sus necesidades.

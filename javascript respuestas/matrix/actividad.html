@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+
+	// var aAlumFila = new Array();
+	// aAlumFila[0] = new Array('safeer','Fila 2');
+	// aAlumFila[1] = new Array('lorena','Fila 2');
+	// aAlumFila[2] = new Array('lucas','Fila 1');
+	// aAlumFila[3] = new Array('rafa','Fila 1');
+
+	//Declaramos los datos en una matriz
+	var aAlumFila = new Array();
+
+	aAlumFila[0] = new Array();
+	aAlumFila[0][0] = 'safeer';
+	aAlumFila[0][1] = 'Fila 2';
+
+	aAlumFila[1] = new Array();
+	aAlumFila[1][0] = 'lorena';
+	aAlumFila[1][1] = 'Fila 2';
+
+	aAlumFila[2] = new Array();
+	aAlumFila[2][0] = 'lucas';
+	aAlumFila[2][1] = 'Fila 1';
+
+	aAlumFila[3] = new Array();
+	aAlumFila[3][0] = 'rafa';
+	aAlumFila[3][1] = 'Fila 1';
+
+	//imprimimos
+	for (var i = 0; i < aAlumFila.length; i++) {
+		for (var j = 0; j < aAlumFila[0].length; j++) {
+			console.log(aAlumFila[i][j]);
+		};
+	};
+
+
+	//forma que muestre 
+	for (var i = 0; i < aAlumFila.length; i++) {
+		console.log('El alumno ' + aAlumFila[i][0]
+			+' esta en ' + aAlumFila[i][1]);
+	};
+	
+
+
+
+</script>
+
+	
+</body>
+</html>

@@ -1,0 +1,16 @@
+Una empresa que realiza servicios funerarios ha decidido contratar a payasos para animar los entierros. A través de un contacto, te han contratado para realizar una web con un formulario. La idea es que los posibles candidatos puedan enviar sus datos. 
+Los campos son:
+
+- Nombre artístico (campo de texto).
+- ¿Tiene nariz propia? (radiobutton)
+- Indique los artilugios que sepa utilizar: cañon, minibicicleta, monociclo, títeres y pistola de agua. (checkbox)
+- Género: hombre, mujer o “no me acuerdo” (lista desplegable).
+- Número de teléfono de contacto.
+
+Las validaciones:
+
+- El nombre artístico debe ser obligado.
+- Si no tiene nariz propia, cuando se pulse en enviar, debe advertir que la nariz tendrán que comprarsela ellos mismos.
+- Mínimo tiene que saber utilizar 2 artilugios. 
+- Si elige el tercer género, debe mostrarse un popup diciendo que no sea payaso y seleccione un sexo válido.
+- El número de teléfono tiene que ser números y de 9 cifras.

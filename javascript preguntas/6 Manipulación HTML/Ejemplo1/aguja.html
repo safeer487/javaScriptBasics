@@ -1,0 +1,50 @@
+<html>
+<head>
+	<style type="text/css">
+	#reloj {
+		width: 300px;
+		height: 300px;
+		margin-left: -150px;
+		margin-top: -150px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		background-image: url('img/reloj.png')
+	}
+	#aguja {
+		width: 300px;
+		height: 300px;
+		transform:rotate(45deg);
+		-ms-transform:rotate(45deg);
+		-webkit-transform:rotate(45deg);
+	}
+	</style>
+</head>
+<body>
+	<div id="reloj">
+		<img id="aguja" src="img/aguja.png">
+	</div>
+</body>
+</html>
+<script type="text/javascript">
+	
+	var miDate
+	var iHola, iMin, iSeg
+
+	function logica() {
+		miDate = new Date()
+		iHora =  miDate.getHours()
+		iMin = miDate.getMinutes()
+		iSeg = (360 * miDate.getSeconds()) / 60
+		document.getElementById('aguja').style.webkitTransform = "rotate(" + iSeg + "deg)";
+		document.getElementById('aguja').style.webkitTransform = "rotate(" + iSeg + "deg)";
+		document.getElementById('aguja').style.MozTransform = "rotate(" + iSeg + "deg)";
+		document.getElementById('aguja').style.msTransform = "rotate(" + iSeg + "deg)";
+		document.getElementById('aguja').style.OTransform = "rotate(" + iSeg + "deg)";
+		document.getElementById('aguja').style.transform = "rotate(" + iSeg + "deg)";
+		//document.getElementById('hora')
+		setTimeout("logica()", 1000)
+	}
+
+	logica()
+</script>

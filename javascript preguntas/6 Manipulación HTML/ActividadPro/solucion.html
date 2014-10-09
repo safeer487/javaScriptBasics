@@ -1,0 +1,103 @@
+<html>
+<head>
+	<style type="text/css">
+		section {
+			width: 173px;
+			height: 197px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+		section #divSkin {
+			width: 173px;
+			height: 197px;
+			background-image: url('img/skin.jpg');
+		}
+		section #divSkin #divIcono {
+			width: 50px;
+			height: 50px;
+			margin-right: auto;
+			margin-left: auto;
+		}
+	</style>
+</head>
+<body>
+	<section>
+		<div id="divSkin">
+			<img src="img/pixel.png" width="1" height="80">
+			<div id="divIcono"></div>
+		</div>
+		<input type="button" value="alimentar" onclick="quitarHambre()">
+		<input type="button" value="jugar" onclick="quitarAburrimiento()">
+		<input type="button" value="ver nombre" onclick="miTamagotchi.getNom()">
+	</section>
+	<script type="text/javascript">
+		
+		//Objeto
+		function Tamagotchi() {
+			this.nombre = "Anonimo"
+			this.bHambre = false
+			this.iTiemCam = 10
+			this.iTiemHam = this.iTiemCam  
+			this.bAburrido = false
+			this.iTiemAbu = this.iTiemCam  
+
+			this.getNom = function() {
+				alert(this.nombre)
+			}
+
+			this.setNom = function(insNomNew) {
+				this.nombre = insNomNew
+			}
+		} 
+		//Crea el objeto
+		var miTamagotchi = new Tamagotchi()
+
+		//Bucle que cambia las necesidades
+		function comprobarTamagotchi() {
+			//Comprueba hambre
+			if(!miTamagotchi.bHambre && miTamagotchi.iTiemHam > 0) {
+				miTamagotchi.iTiemHam = miTamagotchi.iTiemHam - 1
+			} else {
+				miTamagotchi.bHambre = true
+			}
+
+			//Comprueba el aburrimiento
+			if(!miTamagotchi.bAburrido && miTamagotchi.iTiemAbu > 0) {
+				miTamagotchi.iTiemAbu = miTamagotchi.iTiemAbu - 1
+			} else {
+				miTamagotchi.bAburrido = true
+			}
+
+			//Imprime iconos
+			if(miTamagotchi.bAburrido && !miTamagotchi.bHambre) {
+				document.getElementById('divIcono').innerHTML = '<img src="img/aburrido.gif" width="50" height="50">'
+			} else if(!miTamagotchi.bAburrido && miTamagotchi.bHambre) {
+				document.getElementById('divIcono').innerHTML = '<img src="img/hambre.gif" width="50" height="50">'
+			} else if(miTamagotchi.bAburrido && miTamagotchi.bHambre) {
+				document.getElementById('divIcono').innerHTML = '<img src="img/mal.gif" width="50" height="50">'
+			} else {
+				document.getElementById('divIcono').innerHTML = '<img src="img/feliz.gif" width="50" height="50">'
+			}
+			setTimeout("comprobarTamagotchi()", 1000)
+		}
+
+		/**
+		 * Metodo que quita el hambre
+		 */
+		function quitarHambre() {
+			miTamagotchi.bHambre = false
+			miTamagotchi.iTiemHam = miTamagotchi.iTiemCam
+		}
+
+		/**
+		 * Metodo que quita el aburrimiento
+		 */
+		function quitarAburrimiento() {
+			miTamagotchi.bAburrido = false
+			miTamagotchi.iTiemAbu = miTamagotchi.iTiemCam
+		}
+
+		comprobarTamagotchi()
+	</script>
+</body>
+</html>

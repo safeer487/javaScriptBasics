@@ -1,0 +1,6 @@
+Rapidshare se ha puesto en contacto contigo. Te piden que les realices una página con un botón de "Descargar". Cuando se pulse ocurrirá los siguientes sucesos:
+
+1) El Botón se deshabilitará. 
+2) Aparecerá en la parte inferior un mensaje que diga: La descarga comenzará en 10 segundos.
+3) El número empezará a decrecer hasta 0.
+4) Desaparecerá la frase anterior y en su lugar habrá un enlace ficticio: http://rapidshare.falso/archivoTrol

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+
+<h2>Aplicacion de java para gestionar profesores a partir de objetos</h2>
+
+<script type="text/javascript">
+	
+	function Profesor(insNom){
+		this.sNom = insNom;
+
+	
+		this.mostrar = function(){
+			console.log("profesor " + this.sNom);
+		}
+	}
+
+
+	var miProfeAndros = new Profesor('andros')
+	miProfeAndros.mostrar();
+
+	var miProfeSonia = new Profesor('sonia')
+	miProfeSonia.mostrar();
+
+	var miProfeIsa = new Profesor('Isa')
+	miProfeIsa.mostrar();
+
+</script>	
+</body>
+</html>

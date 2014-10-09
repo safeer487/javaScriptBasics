@@ -1,0 +1,55 @@
+<html>
+<body>
+	<br>
+	<br>
+	<br>
+	<section>
+		<center>
+			<img src="img/gato1.jpg" id="imagen" alt="gato" width="500" height="300"><br>
+			<input type="button" id="botonAtras" value="<--" onClick="retroceder(iPos)">&nbsp;&nbsp;&nbsp;
+			<input type="button" id="botonAuto" value="auto" onClick="automatizar(iPos)">&nbsp;&nbsp;&nbsp;
+			<input type="button" id="botonAvanzar" value="-->" onClick="avanzar(iPos)">
+			<input type="hidden" id="marcador" value="1">
+		</center>
+	</section>
+</body>
+</html>
+<script type="text/javascript">
+var iPos = 1
+	function avanzar(iniPos) {
+		//Recogemos el marcador
+		var iMarcador = parseInt(document.getElementById("marcador").getAttribute("value"))
+		//Lo incrementamos
+		if(iMarcador < 5) {
+			var iNueMarc = iMarcador + 1
+			document.getElementById("marcador").setAttribute("value", "" + iNueMarc) 
+		} else if(iMarcador == 5) {
+			document.getElementById("marcador").setAttribute("value", "" + 1) 
+		}
+		iMarcador = parseInt(document.getElementById("marcador").getAttribute("value"))
+		
+		document.getElementById("imagen").setAttribute("src", "img/gato" + iMarcador + ".jpg") 
+	}
+
+	function retroceder(iniPos) {
+		//Recogemos el marcador
+		var iMarcador = parseInt(document.getElementById("marcador").getAttribute("value"))
+		//Lo incrementamos
+		if(iMarcador > 1) {
+			var iNueMarc = iMarcador - 1
+			document.getElementById("marcador").setAttribute("value", "" + iNueMarc) 
+		} else {
+			document.getElementById("marcador").setAttribute("value", "" + 5) 
+		}
+		iMarcador = parseInt(document.getElementById("marcador").getAttribute("value"))
+		
+		document.getElementById("imagen").setAttribute("src", "img/gato" + iMarcador + ".jpg") 
+	}
+
+	function automatizar(iniPos) {
+		avanzar(iniPos)
+		var iTiemp = 3000
+		setTimeout("automatizar(" + iniPos + ")", iTiemp)
+	}
+	
+</script>

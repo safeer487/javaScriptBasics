@@ -1,0 +1,1 @@
+Realiza un slider muy básico. Dada las dos imágenes proporcionadas, consigue que cada 3 segundos se cambien entre ellas. 
